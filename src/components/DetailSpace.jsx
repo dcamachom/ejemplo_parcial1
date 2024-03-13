@@ -20,7 +20,7 @@ function DetailSpace(){
                   return homeId && device
                 });
                 setRooms(filteresDev);
-                setLoading(false);
+                
             })
     }, [params]);
     if (loading) {
@@ -33,10 +33,10 @@ function DetailSpace(){
     }
     console.log(room[0].devices);
     return (
-        <Col>
-        <Rooms></Rooms>
-        <TableDetail room={room[0]} />
-        </Col>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Rooms />
+            <TableDetail room={room[0]} />
+        </div>
     );
 
 };

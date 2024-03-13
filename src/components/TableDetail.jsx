@@ -10,7 +10,7 @@ function TableDetail ({room}){
   console.log('aaa'+room.devices);
   return (
       <div style={{ flex: '0 0 25%', margin: '10px 0px' }}>
-        <Table>
+        <Table style={{width:'500px'}}>
           <thead>
             <tr>
               <th>#</th>
