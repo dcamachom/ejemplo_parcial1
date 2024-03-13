@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Spaces from './components/Spaces';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Rooms from './components/Rooms';
+import DetailSpace from './components/DetailSpace';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Spaces />} />
+          <Route path="/spaces" element={<Spaces />} />
+          <Route path="/spaces/:spaceId" element={<Rooms  />} />
+          <Route path="/spaces/:spaceId/:deviceId" element={<DetailSpace  />} />
+        </Routes>
+       </BrowserRouter>
     </div>
   );
 }
