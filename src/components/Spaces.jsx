@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Col} from 'react-bootstrap'
 import Space from './Space'
+import {FormattedMessage} from 'react-intl';
 
 function Spaces(){
 
@@ -12,12 +13,15 @@ function Spaces(){
         })
       }, []);
     return(
-      <div style={{ display: 'flex', flexWrap: 'wrap', marginTop:'10px' }}>
-        {spaces.map((space) => (
-          <Col key={space.id} style={{ flex: '0 0 20%' }}>
-            <Space sp={space} />
-          </Col>
-        ))}
+      <div>
+        <h1><FormattedMessage id="My spaces"/></h1>
+        <div style={{ display: 'flex', flexWrap: 'wrap', marginTop:'10px' }}>
+          {spaces.map((space) => (
+            <Col key={space.id} style={{ flex: '0 0 20%' }}>
+              <Space sp={space} />
+            </Col>
+          ))}
+        </div>
       </div>
     )
 

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import Rooms from './Rooms';
 import TableDetail from './TableDetail';
-import {Col} from 'react-bootstrap';
 
 function DetailSpace(){
 
@@ -20,6 +19,7 @@ function DetailSpace(){
                   return homeId && device
                 });
                 setRooms(filteresDev);
+                setLoading(false);
                 
             })
     }, [params]);

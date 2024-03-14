@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Col} from 'react-bootstrap';
 import Room from './Room';
 import { useParams } from "react-router-dom";
+import {FormattedMessage} from 'react-intl';
 
 function Rooms() {
   const params = useParams();
@@ -22,13 +23,16 @@ function Rooms() {
 
   console.log(rooms)
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px', marginLeft: '0px', marginRight: '-10px' }}>
-        {rooms.map((room) => (
-            <Col key={room.id} style={{ flex: '0 0 20%', margin: '10px 0px', padding: '0px' }}>
-                <Room rm={room}/>
-            </Col>
-        ))}
-    </div>   
+    <div>
+        <h1><FormattedMessage id="My rooms"/></h1>
+        <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px', marginLeft: '0px', marginRight: '-10px' }}>
+            {rooms.map((room) => (
+                <Col key={room.id} style={{ flex: '0 0 20%', margin: '10px 0px', padding: '0px' }}>
+                    <Room rm={room}/>
+                </Col>
+            ))}
+        </div>   
+    </div>
 );
 }
 
